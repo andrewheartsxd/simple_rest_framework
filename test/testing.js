@@ -80,6 +80,7 @@ describe('our http server', function() {
       chai.request(server)
       .delete('/superheroes/cyclops')
       .end(function(err, res) {
+        console.log(err);
         expect(err).to.equal(null);
         expect(res).to.have.status(200);
         fs.readdir('./superheroes/data/', function(err, files) {

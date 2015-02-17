@@ -7,20 +7,19 @@ var folderMaker = require('./lib/folderCheck');
 var validPaths = [];
 
 function addResource(input) {
+  validPaths.push('/' + input);
   folderMaker.makeFolder(input,  function(err) {
     if (err) { 
       throw err; 
     } else { 
-      validPaths.push('/' + input);
       console.log('Resource added');
-      console.log(validPaths);
     }
   });
 }
 
 function startServer() {
   console.log(validPaths);
-  server.start(router.route);
+  server.start(router.route, validPaths);
 };
 
 exports.addResource = addResource;
