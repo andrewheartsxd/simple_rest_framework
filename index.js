@@ -3,4 +3,6 @@
 var server = require('./lib/server');
 var router = require('./lib/router');
 
-server.start(router.route);
+var addResource = 'superheroes';
+
+server.start(router.route, addResource);
