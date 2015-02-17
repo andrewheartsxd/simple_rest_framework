@@ -1,0 +1,7 @@
+*.swp
+*.rtf
+/data
+/unused
+/superheroes
+/supervillains
+/node_modules
